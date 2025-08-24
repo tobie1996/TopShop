@@ -133,7 +133,7 @@ const About = () => {
               Merci de faire confiance à TopShop pour vos besoins quotidiens.
             </p>
             <p className="text-gray-700 text-sm sm:text-base">
-              Nous sommes là pour vous servir et rendre votre expérience d'achat inoubliable ! ✨
+              Nous sommes là pour vous servir et rendre votre expérience d'achat inoubliable !
             </p>
           </div>
         </div>
