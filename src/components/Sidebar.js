@@ -258,7 +258,7 @@ const Sidebar = () => {
       </div>
 
       {/* Styles CSS pour les animations */}
-      <style jsx>{`
+  <style>{`
         .animate-slide-in {
           animation: slideIn 0.5s ease-out;
           opacity: 0;

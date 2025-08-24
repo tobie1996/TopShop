@@ -1,6 +1,6 @@
 // Header.js
 import React, { useContext, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { IoMdArrowForward, IoMdTrash, IoMdClose, IoMdMenu } from 'react-icons/io';
 import { BsWhatsapp, BsShieldCheck, BsTruck } from 'react-icons/bs';
 import { HiOutlineShoppingBag, HiOutlineGift } from 'react-icons/hi';
@@ -10,6 +10,7 @@ import CartItem from './CartItem';
 
 const Header = () => {
   const { isOpen, handleClose, handleOpen } = useContext(SidebarContext);
+  const navigate = useNavigate();
   const { cart, clearCart, total, itemAmount } = useContext(CartContext);
   const [isCheckingOut, setIsCheckingOut] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -103,7 +104,7 @@ const Header = () => {
           <NavLink to="/contact">Contact</NavLink>
           {/* Icône panier Desktop avec animation */}
           <button
-            onClick={handleOpen}
+            onClick={() => navigate('/cart')}
             className="relative cursor-pointer ml-2 p-2 hover:bg-slate-800 rounded-full transition-all duration-300 hover:scale-110 group"
             title="Voir le panier"
           >
@@ -118,7 +119,7 @@ const Header = () => {
         <div className="md:hidden flex items-center space-x-3">
           {/* Icône panier Mobile avec animation */}
           <button
-            onClick={handleOpen}
+            onClick={() => navigate('/cart')}
             className="relative cursor-pointer p-2 hover:bg-slate-800 rounded-full transition-all duration-300 hover:scale-110 group"
             title="Voir le panier"
           >
