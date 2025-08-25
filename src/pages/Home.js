@@ -8,18 +8,15 @@ import Hero from "../components/Hero"
 const Home = () => {
   const {products} = useContext(ProductContext)
   
-  const filteredProducts = products.filter((item) => {
-    const clothingCategories = ["men's clothing", "women's clothing","jewelery","electronics"];
-    return clothingCategories.includes(item.category);
-  });
+  // Plus besoin de filtrage, tous vos produits sont des vêtements féminins
+  const filteredProducts = products;
 
   // Sélection des nouveautés (5 derniers produits)
   const nouveautes = filteredProducts.slice(-5);
   
-  // Sélection des plus populaires (5 premiers produits avec les meilleures notes)
-  const populaires = filteredProducts
-    .sort((a, b) => b.rating.rate - a.rating.rate)
-    .slice(0, 5);
+  // Sélection des plus populaires (5 premiers produits)
+  // Comme il n'y a plus de rating, on prend simplement les 5 premiers
+  const populaires = filteredProducts.slice(0, 5);
 
   return (
     <div>
@@ -38,7 +35,7 @@ const Home = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
             {nouveautes.map((product) => (
               <div key={product.id} className="w-full">
-                <Product product={product} />
+                <Product product={{ ...product, image: product.images && product.images[0] }} />
               </div>
             ))}
           </div>
@@ -79,7 +76,7 @@ const Home = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
             {populaires.map((product) => (
               <div key={product.id} className="w-full">
-                <Product product={product} />
+                <Product product={{ ...product, image: product.images && product.images[0] }} />
               </div>
             ))}
           </div>
@@ -128,7 +125,7 @@ const Home = () => {
                 placeholder="Votre adresse email"
                 className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500 text-sm sm:text-base"
               />
-              <button className="bg-blue-600 text-white px-4 sm:px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 text-sm sm:text-base whitespace-nowrap">
+              <button className=" bg-gradient-to-r from-purple-900 to-slate-900 text-white rounded-lg sm:rounded-l-none sm:rounded-r-lg hover:from-purple-800 hover:to-slate-800 transition-all duration-300 px-4 sm:px-6 py-3 rounded-lg font-semibold text-sm sm:text-base whitespace-nowrap">
                 S'inscrire
               </button>
             </div>

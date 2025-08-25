@@ -1,0 +1,188 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "images": [
+        "https://m.media-amazon.com/images/I/711jn73Rq3L._AC_SX569_.jpg",
+        "https://m.media-amazon.com/images/I/81FBJmpHFyL._AC_SY741_.jpg",
+        "https://m.media-amazon.com/images/I/817AEoX9dML._AC_SY741_.jpg",
+        "https://m.media-amazon.com/images/I/81D5kR7pYDL._AC_SX569_.jpg"
+      ],
+      "category": "Robes",
+      "title": "Robe",
+  "price": 79.99,
+  "description": "Découvrez la Robe d'Été Fleurie, parfaite pour les journées ensoleillées. Confort et élégance assurés dans la catégorie Robes."
+    },
+    {
+      "id": 2,
+      "images": [
+        "https://babaroni.fr/cdn/shop/files/Cathrin-2.jpg?v=1710839753&width=1066",
+        "https://babaroni.fr/cdn/shop/files/Cathrin-3.jpg?v=1710839753&width=1066",
+        "https://babaroni.fr/cdn/shop/files/Cathrin-6.jpg?v=1710839753&width=1066",
+        "https://babaroni.fr/cdn/shop/files/Cathrin-5.jpg?v=1710839753&width=1066"
+      ],
+      "category": "Robes",
+      "title": "Blouse Blanche Élégante",
+  "price": 45.99,
+  "description": "Blouse Blanche Élégante : un haut raffiné pour toutes les occasions. Idéal pour compléter votre collection de Hauts."
+    },
+    {
+      "id": 3,
+      "images": [
+        "https://fr.slipintosoft.com/cdn/shop/files/womens-silk-bathrobe-ruffle-100-mulberry-pure-silk-robe-930558.jpg?v=1724324608",
+        "https://fr.slipintosoft.com/cdn/shop/files/womens-silk-bathrobe-ruffle-100-mulberry-pure-silk-robe-503668.jpg?v=1724324608",
+        "https://fr.slipintosoft.com/cdn/shop/files/womens-silk-bathrobe-ruffle-100-mulberry-pure-silk-robe-526544.jpg?v=1724324608",
+        "https://fr.slipintosoft.com/cdn/shop/files/womens-silk-bathrobe-ruffle-100-mulberry-pure-silk-robe-630100.jpg?v=1724324608"
+      ],
+      "category": "Robes",
+      "title": "Jean Slim Taille Haute",
+  "price": 89.99,
+  "description": "Jean Slim Taille Haute, un pantalon moderne et confortable pour un look tendance au quotidien. Catégorie : Pantalons."
+    },
+    {
+      "id": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=500",
+        "https://images.unsplash.com/photo-1506629905607-0b48e5b71868?w=500",
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500",
+        "https://images.unsplash.com/photo-1521577352947-9bb58764b69a?w=500"
+      ],
+      "category": "Robes",
+      "title": "Robes Classique",
+  "price": 129.99,
+  "description": "Robes Noir Classique, la robe incontournable pour une allure chic et professionnelle. Catégorie : Robes."
+    },
+    {
+      "id": 5,
+      "images": [
+        "https://etoile-nuptiale.com/cdn/shop/files/RobeLongueSoireeMariage_1.jpg?v=1713875102&width=1800",
+        "https://etoile-nuptiale.com/cdn/shop/files/RobeLongueSoireeMariage_5.jpg?v=1713875102&width=1800",
+        "https://etoile-nuptiale.com/cdn/shop/files/RobeLongueSoireeMariage_4.jpg?v=1713874843&width=1800",
+        "https://etoile-nuptiale.com/cdn/shop/files/RobeLongueSoireeMariage_4.jpg?v=1713874843&width=1800"
+      ],
+      "category": "Robes",
+      "title": "Robe de Soirée Noire",
+  "price": 149.99,
+  "description": "Robe de Soirée Noire, élégance et sophistication pour vos événements spéciaux. Catégorie : Robes."
+    },
+    {
+      "id": 6,
+      "images": [
+        "https://www.kujten.com/cdn/shop/files/F_2500-2474_-_ROSE_VINTAGE_01.jpg?v=1754495611&width=823",
+        "https://media.cos.com/assets/001/c1/24/c1247bea00a8ae0f5c21daab4ed02717acdc36e2_xxl-1.jpg?imwidth=657",
+        "https://media.cos.com/assets/001/c1/24/c1247bea00a8ae0f5c21daab4ed02717acdc36e2_xxl-1.jpg?imwidth=657",
+        "https://kozha.fr/7850-large_default/pull-cachemire.jpg"
+      ],
+      "category": "Pulls",
+      "title": "Pull en Cachemire Rose",
+  "price": 119.99,
+  "description": "Pull en Cachemire Rose, douceur et chaleur pour l'hiver. Un must-have dans la catégorie Pulls."
+    },
+    {
+      "id": 7,
+      "images": [
+        "https://www.patine.fr/cdn/shop/files/patine_produit_taffy_jupe_noir_4.jpg?v=1749485606&width=3000",
+        "https://www.patine.fr/cdn/shop/files/patine_produit_taffy_jupe_noir_6.jpg?v=1749485606&width=3000",
+        "https://www.patine.fr/cdn/shop/files/patine_produit_taffy_jupe_noir_1.jpg?v=1749485606&width=3000",
+        "https://www.patine.fr/cdn/shop/files/patine_produit_taffy_jupe_noir_4.jpg?v=1749485606&width=3000"
+      ],
+      "category": "Jupes",
+      "title": "Jupe Midi Plissée",
+  "price": 65.99,
+  "description": "Jupe Midi Plissée, une jupe élégante et fluide pour un style féminin. Catégorie : Jupes."
+    },
+    {
+      "id": 8,
+      "images": [
+        "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=500",
+        "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=500",
+        "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=500",
+        "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=500"
+      ],
+      "category": "Hauts",
+      "title": "Top Crop Dentelle",
+  "price": 39.99,
+  "description": "Top Crop Dentelle, un haut tendance et délicat pour sublimer vos tenues. Catégorie : Hauts."
+    },
+    {
+      "id": 9,
+      "images": [
+        "https://static.kiabi.be/images/manteau-long-avec-double-boutonnage-camel-bqe67_1_hd2.jpg?width=800",
+        "https://static.kiabi.be/images/manteau-long-avec-double-boutonnage-camel-bqe67_1_hd2.jpg?width=800",
+        "https://static.kiabi.be/images/manteau-long-avec-double-boutonnage-camel-bqe67_1_hd5.jpg?width=800",
+        "https://static.kiabi.be/images/manteau-long-avec-double-boutonnage-camel-bqe67_1_hd1.jpg?width=800"
+      ],
+      "category": "Manteaux",
+      "title": "Manteau Long Camel",
+  "price": 199.99,
+  "description": "Manteau Long Camel, la pièce idéale pour affronter l'hiver avec style. Catégorie : Manteaux."
+    },
+    {
+      "id": 10,
+      "images": [
+        "https://www.ma-combi.com/wp-content/uploads/2022/12/combinaison-habillee-a-epaule-denude.jpeg",
+        "https://www.ma-combi.com/wp-content/uploads/2022/12/combinaison-habillee-a-epaule-denudee.jpeg",
+        "https://www.ma-combi.com/wp-content/uploads/2022/12/combinaison-habillee-a-epaule-denudee-5.jpeg",
+        "https://www.ma-combi.com/wp-content/uploads/2022/12/combinaison-habillee-a-epaule-denude-11.jpeg"
+      ],
+      "category": "Combinaisons",
+      "title": "Combinaison Pantalon Élégante",
+  "price": 109.99,
+  "description": "Combinaison Pantalon Élégante, un look moderne et sophistiqué en une seule pièce. Catégorie : Combinaisons."
+    },
+    {
+      "id": 11,
+      "images": [
+        "https://images.unsplash.com/photo-1578932750294-f5075e85f44a?w=500",
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500",
+        "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=500",
+        "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=500"
+      ],
+      "category": "T-shirts",
+      "title": "T-shirt Basique Blanc",
+  "price": 19.99,
+  "description": "T-shirt Basique Blanc, l'essentiel de toute garde-robe. Polyvalent et confortable. Catégorie : T-shirts."
+    },
+    {
+      "id": 12,
+      "images": [
+        "https://images.unsplash.com/photo-1594633313593-bab3825d0caf?w=500",
+        "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=500",
+        "https://images.unsplash.com/photo-1582418702931-7630e7848c8c?w=500",
+        "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=500"
+      ],
+      "category": "Pantalons",
+      "title": "Pantalon Large Beige",
+  "price": 75.99,
+  "description": "Pantalon Large Beige, confort et élégance pour toutes les occasions. Catégorie : Pantalons."
+    },
+    {
+      "id": 13,
+      "images": [
+        "https://gemo-gemo-fr-storage.omn.proximis.com/Imagestorage/imagesSynchro/1534/1848/b6ba293cc633f865b7096e9f2e284869f05972a5_819275_1.jpeg",
+        "https://gemo-gemo-fr-storage.omn.proximis.com/Imagestorage/imagesSynchro/1534/1848/a7e15b7f317de432e9f9e5fe385101c9e2628eed_819275_2.jpeg",
+        "https://gemo-gemo-fr-storage.omn.proximis.com/Imagestorage/imagesSynchro/1534/1848/1ca49ba253da7e46f626449730e3f67a25ea4f33_819275_4.jpeg",
+        "https://gemo-gemo-fr-storage.omn.proximis.com/Imagestorage/imagesSynchro/1534/1848/6501090d2f294a51452137003385ca154722138d_819275_3.jpeg"
+      ],
+      "category": "Cardigans",
+      "title": "Cardigan Long Gris",
+  "price": 89.99,
+  "description": "Cardigan Long Gris, chaleur et style pour vos journées fraîches. Catégorie : Cardigans."
+    },
+    
+    
+    {
+      "id": 15,
+      "images": [
+        "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=500",
+        "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=500&fit=crop&crop=top",
+        "https://seriano.ma/cdn/shop/files/15_9011366d-7e1a-4485-9366-eb468bf609f6_800x1026_crop_center@2x.png?v=1755261738",
+        "https://seriano.ma/cdn/shop/files/s1_800x1026_crop_center@2x.png?v=1755261738"
+      ],
+      "category": "Robes",
+      "title": "Chemisier Satin Rose",
+  "price": 55.99,
+  "description": "Chemisier Satin Rose, douceur et élégance pour un look raffiné. Catégorie : Chemisiers."
+    }
+  ]
+}

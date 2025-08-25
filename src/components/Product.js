@@ -59,7 +59,7 @@ const Product = ({product}) => {
           {/* Badge promotion */}
           <div className='absolute top-4 left-4 z-10'>
             <span className='bg-red-600 text-white text-xs font-medium px-2 py-1 uppercase tracking-wide'>
-              Sale
+              Vente
             </span>
           </div>
 

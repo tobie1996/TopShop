@@ -1,24 +1,16 @@
 import { createContext, useContext, useEffect, useState } from "react"
+import productsData from './products.json'
 
 export const ProductContext = createContext();
 
-
 const ProductProvider = ({children}) => {
 
-  const [products,setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
   
   useEffect(() => {
-    const fetchProducts = async () => {
-      
-      const response = await fetch('https://fakestoreapi.com/products');
-      const data = await response.json();
-      setProducts(data);
-    }
-
-    fetchProducts();
-
+    // Charger les produits depuis le fichier JSON local
+    setProducts(productsData.products);
   }, [])
-
 
   return (
     <ProductContext.Provider value={{ products }}>
