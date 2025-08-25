@@ -15,12 +15,22 @@ import Checkout from './pages/Checkout';
 
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
+
+  // Afficher le loader uniquement à la première ouverture de l'application (dans l'onglet)
+  const [loading, setLoading] = useState(() => {
+    // Si "topshop_loader_shown" n'est pas dans sessionStorage, on affiche le loader
+    return !window.sessionStorage.getItem('topshop_loader_shown');
+  });
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1200); // 1.2s loader
-    return () => clearTimeout(timer);
-  }, []);
+    if (loading) {
+      const timer = setTimeout(() => {
+        setLoading(false);
+        window.sessionStorage.setItem('topshop_loader_shown', '1');
+      }, 1200); // 1.2s loader
+      return () => clearTimeout(timer);
+    }
+  }, [loading]);
 
   if (loading) {
     return <Loader />;
