@@ -13,7 +13,20 @@ const CartPageItem = ({ item }) => {
   if (!item) return null;
 
   const { id, title, image, price, amount } = item;
-  const totalPrice = parseFloat(price * amount).toFixed(2);
+  
+  // Formatage des prix pour éviter les débordements
+  const formatPrice = (value) => {
+    // Si le prix est très élevé, on utilise une notation compacte
+    if (value >= 1000000) {
+      return `$${(value / 1000000).toFixed(1)}M`;
+    } else if (value >= 1000) {
+      return `$${(value / 1000).toFixed(1)}K`;
+    }
+    // Sinon, on formate normalement avec séparateurs de milliers
+    return `$${value.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+  };
+
+  const totalPrice = price * amount;
 
   return (
     <div className="bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-md transition-all duration-300 overflow-hidden">
@@ -36,18 +49,19 @@ const CartPageItem = ({ item }) => {
         </div>
 
         {/* Informations produit */}
-        <div className='flex-1 flex flex-col justify-between'>
+        <div className='flex-1 flex flex-col justify-between min-w-0'> {/* Ajout de min-w-0 pour contenir les débordements */}
           {/* Header avec titre et bouton supprimer */}
           <div className='flex justify-between items-start gap-2'>
             <Link 
               to={`/product/${id}`} 
-              className="text-lg font-semibold text-gray-800 hover:text-purple-700 transition-colors duration-300 line-clamp-2 flex-1"
+              className="text-lg font-semibold text-gray-800 hover:text-purple-700 transition-colors duration-300 line-clamp-2 flex-1 truncate" // Ajout de truncate
+              title={title} // Tooltip avec le titre complet
             >
               {title}
             </Link>
             <button
               onClick={() => removeFromCart(id)}
-              className='p-2 hover:bg-red-50 rounded-lg transition-colors duration-300'
+              className='p-2 hover:bg-red-50 rounded-lg transition-colors duration-300 flex-shrink-0'
               title="Supprimer du panier"
             >
               <IoMdClose className='text-gray-400 hover:text-red-500 text-lg transition-colors duration-300' />
@@ -55,14 +69,14 @@ const CartPageItem = ({ item }) => {
           </div>
           
           {/* Prix unitaire */}
-          <div className='text-sm text-gray-600 mt-2'>
-            Prix unitaire: <span className='font-medium text-purple-700'>${price}</span>
+          <div className='text-sm text-gray-600 mt-2 truncate'> {/* Ajout de truncate */}
+            Prix unitaire: <span className='font-medium text-purple-700'>{formatPrice(price)}</span>
           </div>
           
           {/* Contrôles de quantité et prix total */}
-          <div className='flex items-center justify-between mt-4'>
+          <div className='flex items-center justify-between mt-4 flex-wrap gap-2'> {/* Ajout de flex-wrap et gap */}
             {/* Contrôleur de quantité */}
-            <div className='flex items-center bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm'>
+            <div className='flex items-center bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm flex-shrink-0'>
               <button 
                 onClick={() => decreaseAmount(id)}
                 className='p-3 hover:bg-purple-100 hover:text-purple-700 transition-all duration-300 disabled:opacity-40'
@@ -84,12 +98,12 @@ const CartPageItem = ({ item }) => {
             </div>
             
             {/* Prix total */}
-            <div className='text-right'>
-              <div className='text-xl font-bold text-purple-700'>
-                ${totalPrice}
+            <div className='text-right min-w-0 flex-shrink'> {/* Ajout de min-w-0 */}
+              <div className='text-xl font-bold text-purple-700 truncate' title={`$${totalPrice.toFixed(2)}`}>
+                {formatPrice(totalPrice)}
               </div>
-              <div className='text-sm text-gray-500'>
-                ${price} × {amount}
+              <div className='text-sm text-gray-500 truncate'>
+                {formatPrice(price)} × {amount}
               </div>
             </div>
           </div>
@@ -101,6 +115,16 @@ const CartPageItem = ({ item }) => {
 
 const Cart = () => {
   const { cart, clearCart, total, itemAmount } = useContext(CartContext);
+
+  // Fonction pour formater les grands nombres
+  const formatPrice = (value) => {
+    if (value >= 1000000) {
+      return `$${(value / 1000000).toFixed(1)}M`;
+    } else if (value >= 1000) {
+      return `$${(value / 1000).toFixed(1)}K`;
+    }
+    return `$${value.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+  };
 
   const handleWhatsAppCheckout = () => {
     const orderData = {
@@ -115,14 +139,17 @@ const Cart = () => {
     const message = `🛍️ *Nouvelle Commande TopShop*\n\n` +
       `📋 *Détails de la commande:*\n` +
       `${orderData.items.map(item => 
-        `• ${item.title}\n  Quantité: ${item.quantity}\n  Prix: $${item.price}\n`
+        `• ${item.title}\n  Quantité: ${item.quantity}\n  Prix: ${formatPrice(item.price)}\n`
       ).join('\n')}` +
-      `\n💰 *Total: $${orderData.total.toFixed(2)}*\n\n` +
+      `\n💰 *Total: ${formatPrice(orderData.total)}*\n\n` +
       `Merci pour votre commande! 🙏`;
 
     const whatsappUrl = `https://api.whatsapp.com/send?phone=237691690285&text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
+
+  // Calcul du total avec taxes
+  const totalWithTaxes = total + (total * 0.1);
 
   // Si le panier est vide
   if (cart.length === 0) {
@@ -171,15 +198,15 @@ const Cart = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center justify-between mb-8 flex-wrap gap-4"> {/* Ajout de flex-wrap et gap */}
             <Link 
               to="/shop" 
-              className="flex items-center space-x-2 text-purple-600 hover:text-purple-700 transition-colors duration-300"
+              className="flex items-center space-x-2 text-purple-600 hover:text-purple-700 transition-colors duration-300 order-1"
             >
               <IoMdArrowBack className="text-xl" />
               <span className="font-medium">Continuer mes achats</span>
             </Link>
-            <div className="text-center">
+            <div className="text-center order-3 lg:order-2 w-full lg:w-auto"> {/* Réorganisation responsive */}
               <h1 className="text-3xl font-bold text-gray-800">Mon Panier</h1>
               <p className="text-gray-600">
                 {itemAmount} article{itemAmount > 1 ? 's' : ''} dans votre panier
@@ -187,7 +214,7 @@ const Cart = () => {
             </div>
             <button
               onClick={clearCart}
-              className="text-red-500 hover:text-red-600 transition-colors duration-300 font-medium px-4 py-2 border border-red-200 rounded-lg hover:bg-red-50"
+              className="text-red-500 hover:text-red-600 transition-colors duration-300 font-medium px-4 py-2 border border-red-200 rounded-lg hover:bg-red-50 order-2 lg:order-3"
             >
               Vider le panier
             </button>
@@ -213,7 +240,7 @@ const Cart = () => {
                 <div className="space-y-4 mb-6">
                   <div className="flex justify-between text-gray-600">
                     <span>Sous-total ({itemAmount} articles)</span>
-                    <span className="font-medium">${total}</span>
+                    <span className="font-medium">{formatPrice(total)}</span>
                   </div>
                   <div className="flex justify-between text-gray-600">
                     <span>Livraison</span>
@@ -221,12 +248,14 @@ const Cart = () => {
                   </div>
                   <div className="flex justify-between text-gray-600">
                     <span>Taxes</span>
-                    <span className="font-medium">${(total * 0.1).toFixed(2)}</span>
+                    <span className="font-medium">{formatPrice(total * 0.1)}</span>
                   </div>
                   <hr className="border-gray-200" />
                   <div className="flex justify-between text-xl font-bold text-gray-800">
                     <span>Total</span>
-                    <span>${(parseFloat(total) + parseFloat(total) * 0.1).toFixed(2)}</span>
+                    <span className="truncate" title={`$${totalWithTaxes.toFixed(2)}`}>
+                      {formatPrice(totalWithTaxes)}
+                    </span>
                   </div>
                 </div>
 
