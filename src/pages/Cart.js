@@ -34,9 +34,9 @@ const CartPageItem = ({ item }) => {
         {/* Image produit */}
         <div className='relative group flex-shrink-0'>
           <Link to={`/product/${id}`} className='block'>
-            <div className='w-24 h-24 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg overflow-hidden flex items-center justify-center group-hover:shadow-md transition-all duration-300'>
+            <div className='w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg overflow-hidden flex items-center justify-center group-hover:shadow-md transition-all duration-300'>
               <img 
-                className='max-w-20 max-h-20 object-contain group-hover:scale-105 transition-transform duration-300' 
+                className='max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300' 
                 src={image} 
                 alt={title}
               />
