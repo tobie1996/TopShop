@@ -92,8 +92,13 @@ const Header = () => {
     <>
       <header className="w-full bg-slate-900 shadow-sm py-3 px-4 sm:px-6 flex items-center justify-between fixed top-0 left-0 z-50">
         {/* Logo avec animation */}
-        <Link to="/" className="text-lg sm:text-xl font-bold text-white transition-all duration-300 hover:scale-105 hover:text-purple-300">
-          TopShop
+        <Link to="/" className="flex items-center transition-all duration-300 hover:scale-105">
+          <img
+            src={require('../img/logo.png')}
+            alt="TopShop Logo"
+            className="h-12 w-auto drop-shadow-lg"
+            style={{ maxHeight: 48 }}
+          />
         </Link>
 
         {/* Navigation Desktop */}

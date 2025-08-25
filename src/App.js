@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Loader from './components/Loader';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -12,7 +13,19 @@ import Cart from './pages/Cart';
 import Contact from './pages/Contact';
 import Checkout from './pages/Checkout';
 
+
 const App = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1200); // 1.2s loader
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <div className='overflow-hidden'>
       <Router>

@@ -125,7 +125,7 @@ const Home = () => {
                 placeholder="Votre adresse email"
                 className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500 text-sm sm:text-base"
               />
-              <button className=" bg-gradient-to-r from-purple-900 to-slate-900 text-white rounded-lg sm:rounded-l-none sm:rounded-r-lg hover:from-purple-800 hover:to-slate-800 transition-all duration-300 px-4 sm:px-6 py-3 rounded-lg font-semibold text-sm sm:text-base whitespace-nowrap">
+              <button className=" bg-gradient-to-r from-purple-900 to-slate-900 text-white  sm:rounded-l-none sm:rounded-r-lg hover:from-purple-800 hover:to-slate-800 transition-all duration-300 px-4 sm:px-6 py-3 rounded-lg font-semibold text-sm sm:text-base whitespace-nowrap">
                 S'inscrire
               </button>
             </div>
